@@ -3,13 +3,17 @@
 # Prompt for a single task
 task = input("Enter your task: ")
 
-# Prompt for priority
-priority = input("Priority (high/medium/low): ")
+# Loop to validate priority input
+priority = ""
+while priority not in ("high", "medium", "low"):
+    priority = input("Priority (high/medium/low): ")
 
-# Prompt for time-bound
-time_bound = input("Is it time-bound? (yes/no): ")
+# Loop to validate time-bound input
+time_bound = ""
+while time_bound.lower() not in ("yes", "no"):
+    time_bound = input("Is it time-bound? (yes/no): ")
 
-# Match-case statement for priority
+# Match-case statement to react based on priority
 match priority:
     case "high":
         message = f"'{task}' is a high priority task"
@@ -20,7 +24,7 @@ match priority:
     case _:
         message = f"'{task}' has an undefined priority"
 
-# If statement to modify reminder if time-bound
+# If statement to modify the reminder if the task is time-bound
 if time_bound.lower() == "yes":
     message += " that requires immediate attention today!"
 else:
