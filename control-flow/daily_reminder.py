@@ -25,7 +25,7 @@ match priority:
         message = f"'{task}' has an undefined priority"
 
 # If statement to modify the reminder if the task is time-bound
-if time_bound.lower() == "yes":
+if time_bound == "yes":
     message += " that requires immediate attention today!"
 else:
     message += ". Consider completing it when you have free time."
