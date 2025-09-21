@@ -1,22 +1,12 @@
-# calculator.py
+# Ask the user for the weather
+weather = input("What's the weather like today? (sunny/rainy/cold): ").lower()
 
-# Prompt user for numbers and operation
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
-operation = input("Choose operation (+, -, *, /): ")
-
-# Use match case (Python 3.10+)
-match operation:
-    case "+":
-        print("Result:", num1 + num2)
-    case "-":
-        print("Result:", num1 - num2)
-    case "*":
-        print("Result:", num1 * num2)
-    case "/":
-        if num2 != 0:
-            print("Result:", num1 / num2)
-        else:
-            print("Error: Division by zero is not allowed.")
-    case _:
-        print("Invalid operation.")
+# Provide clothing recommendations based on input
+if weather == "sunny":
+    print("Wear a t-shirt and sunglasses.")
+elif weather == "rainy":
+    print("Don't forget your umbrella and a raincoat.")
+elif weather == "cold":
+    print("Make sure to wear a warm coat and a scarf.")
+else:
+    print("Sorry, I don't have recommendations for this weather.")
