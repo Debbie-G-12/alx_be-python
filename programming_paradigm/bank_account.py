@@ -1,6 +1,6 @@
 class BankAccount:
     def __init__(self, initial_balance=0):
-        self.__account_balance = initial_balance
+        self.__account_balance = initial_balance  # Encapsulated balance
 
     def deposit(self, amount):
         self.__account_balance += amount
@@ -9,7 +9,7 @@ class BankAccount:
         if amount <= self.__account_balance:
             self.__account_balance -= amount
             return True
-        return False  # This return is allowed (not a print)
+        return False
 
-    def get_balance(self):
-        return self.__account_balance  # Instead of printing, just return it
+    def display_balance(self):
+        print(f"Current Balance: ${self.__account_balance}")
