@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Book class demonstrating Python magic methods.
-"""
+
 
 class Book:
     def __init__(self, title, author, year):
@@ -17,3 +17,23 @@ class Book:
 
     def __repr__(self):
         return f"Book('{self.title}', '{self.author}', {self.year})"
+        """
+
+# oop/book_class.py
+
+class Book:
+    def __init__(self, title: str, author: str, year: int):
+        self.title = title
+        self.author = author
+        self.year = int(year)
+
+    def __str__(self):
+        return f"{self.title} by {self.author}, published in {self.year}"
+
+    def __repr__(self):
+        return f"Book('{self.title}', '{self.author}', {self.year})"
+
+    def __del__(self):
+        # keep it simple: print exactly as the test expects
+        print(f"Deleting {self.title}")
+
